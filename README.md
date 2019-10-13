@@ -27,7 +27,7 @@ Necessario Java 8 ou superior e JavaFX 11 ou superior.
 ## Build
 No Eclipse
 * Botão direito no projeto -> Run As -> Run Configurations -> Arguments -> VM Arguments
-* Copiar o conteúdo abaixo, adaptando para sua pasta onde estâ a lib do JavaFX 11:
+* Copiar o conteúdo abaixo, adaptando para sua pasta onde esta a lib do JavaFX 11:
 <pre>
  --module-path C:\java-libs\javafx-sdk\lib --add-modules=javafx.fxml,javafx.controls
 </pre>
