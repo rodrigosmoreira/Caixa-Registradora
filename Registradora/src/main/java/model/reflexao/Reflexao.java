@@ -8,6 +8,7 @@ import gui.ViewController;
 import gui.utils.Alerts;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
+import model.RelacionaBotaoAoEvento;
 
 public class Reflexao {
 

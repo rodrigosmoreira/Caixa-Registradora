@@ -5,42 +5,34 @@ import java.util.Locale;
 import java.util.ResourceBundle;
 
 import gui.utils.Mascara;
-import javafx.event.ActionEvent;
+import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
-import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
-import model.acoes.ProcessaTeclaAcao;
+import model.RelacionaBotaoAoEvento;
 import model.entidades.Venda;
 import model.reflexao.Reflexao;
 
 public class ViewController implements Initializable {
-	
-	private Venda venda = new Venda();
-	private Button botao;
-	
+
 	@FXML
 	private AnchorPane anchorPane;
-	
 	@FXML
 	private TextField visor;
 	@FXML
 	private Button registraBotao;
-	
+	private Venda venda = new Venda();
+	private Button botao;
+
 	@FXML
-	public void onTeclaClick(KeyEvent event) {
-		new ProcessaTeclaAcao(this, event).executa();
-	}
-	
-	@FXML
-	public void onBotaoClick(ActionEvent event) {
+	public void onClick(Event event) {
 		Locale.setDefault(Locale.US);
-		botao = ((Button) event.getSource());
+		botao = new RelacionaBotaoAoEvento(this, event).getBotao();
 		new Reflexao(this).invocaAcao();
 	}
-
+	
 	public void initialize(URL url, ResourceBundle sb) {
 		Mascara.setTextFieldDouble(visor);
 	}
