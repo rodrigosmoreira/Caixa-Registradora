@@ -3,7 +3,7 @@
 ---
 
 <h1 align="center">
-    <img src="https://i.imgur.com/ZJRkuwx.png">
+    <img src="https://i.imgur.com/yE4G9XQ.png">
 </h1>
 <p align="center">
 <b>Caixa registradora para ajudar a vendinha do Manoel</b>
@@ -42,13 +42,13 @@ No Eclipse
 Primeiro informe o peso do produto atravês do teclado ou dos botões e clique no botão Registrar ou a tecla Enter e depois repita o passo para o valor unitário do produto depois disso ira aparecer na tela o valor a ser pago.
 * Observação: O programa aceita somente numeros com precisão de duas casas decimais
 <h1 align="center">
-    <img src="https://i.imgur.com/4cNhGlr.png">
+    <img src="https://i.imgur.com/yLCSKoV.png">
 </h1>
 
 ### Cancelar Venda
 Durante o registro de venda e possivel cancelar a venda apertando o botão Cancelar ou a tecla Delete depois isso ira aparecer a confirmação na tela.
 <h1 align="center">
-    <img src="https://i.imgur.com/3PccPsp.png">
+    <img src="https://i.imgur.com/HvYX5t3.png">
 </h1>
 
 ### Limpar Visor
@@ -58,14 +58,14 @@ Para limpar a tela aperte o botão Limpar ou a tecla BackSpace.
 Para gerar o registro com todas as vendas e o total delas aperte o botão = ou a tecla = e depois disso será exibido na tela o registro e tambêm será salvo no arquivo "registros.txt" no projeto.
 
 <h1 align="center">
-    <img src="https://i.imgur.com/AedsIzy.png">
+    <img src="https://i.imgur.com/ZussUgl.png">
 </h1>
 <p align="center">
 <b>Registro de vendas na tela</b>
 </p>
 
 <h1 align="center">
-    <img src="https://i.imgur.com/00fjXt5.png">
+    <img src="https://i.imgur.com/CzvfKVs.png">
 </h1>
 <p align="center">
 <b>Registro de vendas no arquivo .txt</b>
