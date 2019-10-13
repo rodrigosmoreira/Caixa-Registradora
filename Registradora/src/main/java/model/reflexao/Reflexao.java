@@ -8,6 +8,7 @@ import gui.ViewController;
 import gui.utils.Alerts;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
+import model.ControlKey;
 
 public class Reflexao {
 
@@ -22,19 +23,20 @@ public class Reflexao {
 	public void invocaAcao() {
 		Class<?> classe;
 		try {
-			classe = Class.forName("model.acoes." + getAcaoBotao());
+			classe = Class.forName(ControlKey.PATH_ACAO.getString() + getAcaoBotao());
 			Constructor<?> construtor = classe.getDeclaredConstructor(ViewController.class);
 			Object acao = construtor.newInstance(_viewController);
-			Method executa = classe.getDeclaredMethod("executa");
+			Method executa = classe.getDeclaredMethod(ControlKey.EXECUTA.getString());
 			executa.invoke(acao);
 		} catch (ClassNotFoundException | NoSuchMethodException | IllegalAccessException | IllegalArgumentException
 				| InvocationTargetException | SecurityException | InstantiationException exception) {
-			Alerts.showAlert("Erro", "", "Erro ao clicar no botao", AlertType.ERROR);
+			Alerts.showAlert(ControlKey.ERRO.getString(), ControlKey.TEXTO_VAZIO.getString(),
+					ControlKey.ERRO_AO_CLICAR_NO_BOTAO.getString(), AlertType.ERROR);
 		}
 	}
-	
+
 	public String getAcaoBotao() {
-		return botao.getId().contains("Caractere") ? "CaractereAcao" : botao.getId(); 
+		return botao.getId().contains("CaractereAcao") ? "CaractereAcao" : botao.getId();
 	}
 
 }

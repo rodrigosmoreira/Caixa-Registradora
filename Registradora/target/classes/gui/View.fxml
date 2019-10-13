@@ -2,30 +2,40 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane fx:id="anchorPane" onKeyPressed="#onClick" prefHeight="223.0" prefWidth="253.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.ViewController">
+<AnchorPane fx:id="anchorPane" onKeyPressed="#onClick" prefHeight="191.0" prefWidth="253.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.ViewController">
    <children>
-      <Button id="CaractereAcao7" layoutY="59.0" mnemonicParsing="false" onAction="#onClick" prefHeight="30.0" prefWidth="30.0" styleClass="botaoCaractereCurto" text="7" />
-      <Button id="CaractereAcao2" layoutX="51.0" layoutY="143.0" mnemonicParsing="false" onAction="#onClick" prefHeight="30.0" prefWidth="30.0" styleClass="botaoCaractereCurto" text="2" />
-      <Button id="CaractereAcao3" layoutX="102.0" layoutY="143.0" mnemonicParsing="false" onAction="#onClick" prefHeight="30.0" prefWidth="30.0" styleClass="botaoCaractereCurto" text="3" />
-      <Button id="CaractereAcao5" layoutX="51.0" layoutY="101.0" mnemonicParsing="false" onAction="#onClick" prefHeight="30.0" prefWidth="30.0" styleClass="botaoCaractereCurto" text="5" />
-      <Button id="CaractereAcao6" layoutX="102.0" layoutY="101.0" mnemonicParsing="false" onAction="#onClick" prefHeight="30.0" prefWidth="30.0" styleClass="botaoCaractereCurto" text="6" />
-      <Button id="CaractereAcao8" layoutX="51.0" layoutY="59.0" mnemonicParsing="false" onAction="#onClick" prefHeight="30.0" prefWidth="30.0" styleClass="botaoCaractereCurto" text="8" />
-      <Button id="CaractereAcao9" layoutX="102.0" layoutY="59.0" mnemonicParsing="false" onAction="#onClick" prefHeight="30.0" prefWidth="30.0" styleClass="botaoCaractereCurto" text="9" />
-      <Button id="CancelaVendaAcao" layoutX="153.0" layoutY="101.0" mnemonicParsing="false" onAction="#onClick" prefHeight="30.0" prefWidth="75.0" style="-fx-background-color: #F44336;" styleClass="botaoAcao" text="Cancelar" />
-      <Button id="GeraRegistroDeVendaAcao" layoutX="153.0" layoutY="59.0" mnemonicParsing="false" onAction="#onClick" prefHeight="30.0" prefWidth="75.0" style="-fx-background-color: #2196F3;" styleClass="botaoAcao" text="=" />
-      <Button id="RegistraPesoAcao" fx:id="registraBotao" layoutX="153.0" layoutY="185.0" mnemonicParsing="false" onAction="#onClick" prefHeight="30.0" prefWidth="75.0" style="-fx-background-color: #4CAF50;" styleClass="botaoAcao" text="Registrar" />
-      <TextField fx:id="visor" layoutY="-1.0" prefHeight="60.0" prefWidth="253.0" promptText="Informe o peso" />
-      <Button id="CaractereAcaoDot" layoutX="102.0" layoutY="185.0" mnemonicParsing="false" onAction="#onClick" prefHeight="30.0" prefWidth="30.0" styleClass="botaoCaractereCurto" text=".">
+      <Button id="CaractereAcao7" layoutY="76.0" mnemonicParsing="false" onAction="#onClick" prefHeight="30.0" prefWidth="30.0" styleClass="botaoCaractereCurto" text="7" />
+      <Button id="CaractereAcao2" layoutX="51.0" layoutY="160.0" mnemonicParsing="false" onAction="#onClick" prefHeight="30.0" prefWidth="30.0" styleClass="botaoCaractereCurto" text="2" />
+      <Button id="CaractereAcao3" layoutX="102.0" layoutY="160.0" mnemonicParsing="false" onAction="#onClick" prefHeight="30.0" prefWidth="30.0" styleClass="botaoCaractereCurto" text="3" />
+      <Button id="CaractereAcao5" layoutX="51.0" layoutY="118.0" mnemonicParsing="false" onAction="#onClick" prefHeight="30.0" prefWidth="30.0" styleClass="botaoCaractereCurto" text="5" />
+      <Button id="CaractereAcao6" layoutX="102.0" layoutY="118.0" mnemonicParsing="false" onAction="#onClick" prefHeight="30.0" prefWidth="30.0" styleClass="botaoCaractereCurto" text="6" />
+      <Button id="CaractereAcao8" layoutX="51.0" layoutY="76.0" mnemonicParsing="false" onAction="#onClick" prefHeight="30.0" prefWidth="30.0" styleClass="botaoCaractereCurto" text="8" />
+      <Button id="CaractereAcao9" layoutX="102.0" layoutY="76.0" mnemonicParsing="false" onAction="#onClick" prefHeight="30.0" prefWidth="30.0" styleClass="botaoCaractereCurto" text="9" />
+      <Button id="CancelaVendaAcao" layoutX="153.0" layoutY="118.0" mnemonicParsing="false" onAction="#onClick" prefHeight="30.0" prefWidth="75.0" style="-fx-background-color: #F44336;" styleClass="botaoAcao" text="Cancelar" />
+      <Button id="GeraRegistroDeVendaAcao" layoutX="153.0" layoutY="76.0" mnemonicParsing="false" onAction="#onClick" prefHeight="30.0" prefWidth="75.0" style="-fx-background-color: #2196F3;" styleClass="botaoAcao" text="=" />
+      <Button id="RegistraAcao" layoutX="153.0" layoutY="202.0" mnemonicParsing="false" onAction="#onClick" prefHeight="30.0" prefWidth="75.0" style="-fx-background-color: #4CAF50;" styleClass="botaoAcao" text="Registrar" />
+      <TextField fx:id="visor" layoutY="27.0" prefHeight="49.0" prefWidth="253.0" promptText="Informe o peso" />
+      <Button id="CaractereAcaoDot" layoutX="102.0" layoutY="202.0" mnemonicParsing="false" onAction="#onClick" prefHeight="30.0" prefWidth="30.0" styleClass="botaoCaractereCurto" text=".">
          <padding>
             <Insets bottom="10.0" />
          </padding>
       </Button>
-      <Button id="LimpaVisorAcao" layoutX="153.0" layoutY="143.0" mnemonicParsing="false" onAction="#onClick" prefHeight="30.0" prefWidth="75.0" style="-fx-background-color: #9E9E9E;" styleClass="botaoAcao" text="Limpar" />
-      <Button id="CaractereAcao4" layoutY="101.0" mnemonicParsing="false" onAction="#onClick" prefHeight="30.0" prefWidth="30.0" styleClass="botaoCaractereCurto" text="4" />
-      <Button id="CaractereAcao1" layoutY="143.0" mnemonicParsing="false" onAction="#onClick" prefHeight="30.0" prefWidth="1.0" styleClass="botaoCaractereCurto" text="1" />
-      <Button id="CaractereAcao0" layoutY="185.0" mnemonicParsing="false" onAction="#onClick" prefHeight="30.0" prefWidth="67.0" styleClass="botaoCaractereLargo" text="0" />
+      <Button id="LimpaVisorAcao" layoutX="153.0" layoutY="160.0" mnemonicParsing="false" onAction="#onClick" prefHeight="30.0" prefWidth="75.0" style="-fx-background-color: #9E9E9E;" styleClass="botaoAcao" text="Limpar" />
+      <Button id="CaractereAcao4" layoutY="118.0" mnemonicParsing="false" onAction="#onClick" prefHeight="30.0" prefWidth="30.0" styleClass="botaoCaractereCurto" text="4" />
+      <Button id="CaractereAcao1" layoutY="160.0" mnemonicParsing="false" onAction="#onClick" prefHeight="30.0" prefWidth="1.0" styleClass="botaoCaractereCurto" text="1" />
+      <Button id="CaractereAcao0" layoutY="202.0" mnemonicParsing="false" onAction="#onClick" prefHeight="30.0" prefWidth="67.0" styleClass="botaoCaractereLargo" text="0" />
+      <MenuBar layoutY="2.0" prefHeight="23.0" prefWidth="253.0">
+        <menus>
+          <Menu id="AbreReadmeAcao" mnemonicParsing="false">
+               <graphic>
+                  <Button id="AbreReadmeAcao" mnemonicParsing="false" onAction="#onClick" text="README" />
+               </graphic></Menu>
+        </menus>
+      </MenuBar>
    </children>
 </AnchorPane>

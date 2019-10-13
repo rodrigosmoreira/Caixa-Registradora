@@ -7,17 +7,18 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import model.ControlKey;
 
 public class Main extends Application {
 
 	@Override
 	public void start(Stage stage) {
 		try {
-			Parent parent = FXMLLoader.load(getClass().getResource("/gui/View.fxml"));
+			Parent parent = FXMLLoader.load(getClass().getResource(ControlKey.PATH_FXML.getString()));
 			Scene scene = new Scene(parent);
-			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+			scene.getStylesheets().add(getClass().getResource(ControlKey.APLICATION_CSS.getString()).toExternalForm());
 			stage.setScene(scene);
-			stage.setTitle("Registradora");
+			stage.setTitle(ControlKey.TITULO_PROGRAMA.getString());
 			stage.setResizable(false);
 			stage.show();
 		} catch (IOException e) {

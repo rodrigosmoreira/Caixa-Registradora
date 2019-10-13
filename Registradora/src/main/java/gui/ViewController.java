@@ -21,11 +21,9 @@ public class ViewController implements Initializable {
 	private AnchorPane anchorPane;
 	@FXML
 	private TextField visor;
-	@FXML
-	private Button registraBotao;
 	private Venda venda = new Venda();
 	private Button botao;
-
+	
 	@FXML
 	public void onClick(Event event) {
 		Locale.setDefault(Locale.US);
@@ -51,10 +49,6 @@ public class ViewController implements Initializable {
 
 	public Button getBotao() {
 		return botao;
-	}
-
-	public Button getBotaoRegistra() {
-		return registraBotao;
 	}
 
 	public void setBotao(Button botao) {

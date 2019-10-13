@@ -6,18 +6,19 @@ import java.io.IOException;
 
 import gui.utils.Alerts;
 import javafx.scene.control.Alert.AlertType;
+import model.ControlKey;
 
 public class Venda {
 
-	private Double peso; 
-	private Double valorUnitario; 
-	private Double preco; 
-	
+	private Double peso;
+	private Double valorUnitario;
+	private Double preco;
+
 	public Venda() {
 	}
-	
+
 	public Venda(String linha) {
-		String[] atributos = linha.split(" "); 
+		String[] atributos = linha.split(" ");
 		this.peso = Double.parseDouble(atributos[0]);
 		this.valorUnitario = Double.parseDouble(atributos[1]);
 		this.preco = Double.parseDouble(atributos[2]);
@@ -32,19 +33,19 @@ public class Venda {
 		valorUnitario = null;
 		preco = null;
 	}
-	
+
 	public void salva() {
 		BufferedWriter buffWrite;
 		try {
-			buffWrite = new BufferedWriter(new FileWriter("database.txt", true));
-			buffWrite.append(String.format("%.2f %.2f %.2f\n", peso, valorUnitario, preco));
+			buffWrite = new BufferedWriter(new FileWriter(ControlKey.FILE_DATABASE.getString(), true));
+			buffWrite.append(String.format(ControlKey.MSG_VENDA_ARQUIVO.getString(), peso, valorUnitario, preco));
 			buffWrite.close();
 		} catch (IOException e) {
-			Alerts.showAlert("Erro", "", "Nao foi possivel salvar resultado", AlertType.ERROR);
+			Alerts.showAlert(ControlKey.ERRO.getString(), ControlKey.TEXTO_VAZIO.getString(), ControlKey.MSG_NAO_SALVOU_VENDA.getString(), AlertType.ERROR);
 			e.printStackTrace();
 		}
 	}
-	
+
 	public Double getPeso() {
 		return peso;
 	}
@@ -83,9 +84,7 @@ public class Venda {
 
 	@Override
 	public String toString() {
-		return String.format("%.02f Kg x R$ %.02f // Kg = %.02f", peso, valorUnitario, preco);
+		return String.format(ControlKey.TO_STRING_VENDA.getString(), peso, valorUnitario, preco);
 	}
-
-
 
 }

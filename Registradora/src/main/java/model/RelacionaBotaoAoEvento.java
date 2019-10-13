@@ -13,10 +13,8 @@ public class RelacionaBotaoAoEvento {
 	private Event evento;
 	private Button botao;
 	private AnchorPane anchorPane;
-	private ViewController _viewController;
 	
 	public RelacionaBotaoAoEvento(ViewController viewController, Event event) {
-		this._viewController = viewController;
 		this.anchorPane = viewController.getAnchorPane();
 		this.evento = event;
 	}
@@ -44,7 +42,7 @@ public class RelacionaBotaoAoEvento {
 		else if(codigoTecla == KeyCode.BACK_SPACE)
 			botao = (Button) anchorPane.lookup("#LimpaVisorAcao");
 		else if(codigoTecla == KeyCode.ENTER)
-			botao = _viewController.getBotaoRegistra();
+			botao = (Button) anchorPane.lookup("#RegistraAcao");
 		else if(codigoTecla == KeyCode.EQUALS)
 			botao = (Button) anchorPane.lookup("#GeraRegistroDeVendaAcao");
 	}

@@ -1,6 +1,7 @@
 package gui.utils;
 
 import javafx.scene.control.TextField;
+import model.ControlKey;
 
 public class Mascara {
 
@@ -14,7 +15,7 @@ public class Mascara {
 
 	public static void setTextFieldDouble(TextField txt) {
 		txt.textProperty().addListener((obs, oldValue, newValue) -> {
-			if (newValue != null && !newValue.matches("\\d*([\\.]\\d{0,2})?")) {
+			if (newValue != null && !newValue.matches(ControlKey.REGEX_VALOR.getString())) {
 				txt.setText(oldValue);
 			}
 		});
