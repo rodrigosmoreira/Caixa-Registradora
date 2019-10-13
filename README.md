@@ -46,7 +46,7 @@ Primeiro informe o peso do produto atravês do teclado ou dos botões e clique n
 </h1>
 
 ### Cancelar Venda
-Para cancelar uma compra aperte o botão Cancelar ou a tecla Delete depois isso ira aparecer a confirmação na tela.
+Durante o registro de venda e possivel cancelar a venda apertando o botão Cancelar ou a tecla Delete depois isso ira aparecer a confirmação na tela.
 <h1 align="center">
     <img src="https://i.imgur.com/3PccPsp.png">
 </h1>
