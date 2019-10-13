@@ -9,11 +9,11 @@
 <b>Caixa registradora para ajudar a vendinha do Manoel</b>
 </p>
 
-## Tabela de Conteudos
+## Tabela de Conteúdos
 
 - [Sobre](#sobre)
 - [Requisitos](#requisitos)
-- [Build](#buid)
+- [Build](#build)
 - [Funcionalidades](#funcionalidades)
 
 ## Sobre
@@ -25,8 +25,7 @@ Manoel é português no qual tem uma vendinha e vende tudo por peso, ele é um s
 Necessario Java 8 ou superior e JavaFX 11 ou superior.
 
 ## Build
-
-#### No Eclipse
+No Eclipse
 * Botão direito no projeto -> Run As -> Run Configurations -> Arguments -> VM Arguments
 * Copiar o conteúdo abaixo, adaptando para sua pasta:
 <pre>
