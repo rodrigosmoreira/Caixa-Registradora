@@ -1,0 +1,40 @@
+/* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */
+
+.text-field{
+    -fx-font-size: 18;
+}
+
+.botaoCaractereLargo {
+	-fx-background-radius: 0;
+	-fx-pref-height : 40px;
+	-fx-pref-width : 101px;
+	-fx-background-color: #018786;
+	-fx-border-color: #000000;
+	-fx-font-size: 10pt;
+    -fx-text-fill: black;
+    -fx-border-width: 0.5;
+    -fx-font-size: 18;
+}
+
+.botaoCaractereCurto {
+	-fx-background-radius: 0;
+	-fx-pref-height : 40px;
+	-fx-pref-width : 50px;
+	-fx-border-color: #000000;
+	-fx-background-color: #03DAC6;
+	-fx-border-width: 0.5;
+	-fx-font-size: 18;
+}
+
+.botaoAcao {
+	-fx-font-size: 18;
+	-fx-text-fill: #FFFFFF;
+	-fx-pref-height : 40px;
+	-fx-pref-width : 100px;
+	-fx-border-color: #000000;
+	-fx-border-width: 0.5;
+	-fx-background-color: lightgray;
+    -fx-background-insets: 0;
+}
+
+
