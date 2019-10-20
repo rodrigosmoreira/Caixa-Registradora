@@ -1,4 +1,4 @@
-package model;
+package estrutura;
 
 public enum ControlKey {
 	MSG_VENDA_ARQUIVO("%.2f %.2f %.2f\n"),
@@ -21,9 +21,8 @@ public enum ControlKey {
 	RESULTADO("Resultado"),
 	VALOR_A_SER_PAGO("Valor a ser pago R$ %.02f\n"),
 	ERRO("Erro"),
-	ERRO_AO_CLICAR_NO_BOTAO("Erro ao clicar no botao"),
+	ERRO_EXECUTA_ACAO("Erro ao executar acao"),
 	CARACTERE_ACAO("CaractereAcao"),
-	URL_README("https://github.com/rodrigo-sm/Caixa-Registradora"),
 	APLICATION_CSS("application.css"),
 	PATH_FXML("/gui/View.fxml"),
 	CONFIRMACAO("Confirmacao"),
@@ -34,8 +33,9 @@ public enum ControlKey {
     REGISTRA_PESO_ACAO("RegistraPesoAcao"),
     TITULO_PROGRAMA("Registradora"),
     ERRO_REGISTRO_VENDA("Erro na geracao do registro de vendas"),
-    PATH_ACAO("model.acoes."),
-    TO_STRING_VENDA("%.02f Kg x R$ %.02f // Kg = %.02f");
+    PATH_ACAO("acoes."),
+    TO_STRING_VENDA("%.02f Kg x R$ %.02f // Kg = %.02f"), 
+    ERRO_RECUPERACA_VENDAS("Erro na recupecao das vendas");
 	
     public String string;
 

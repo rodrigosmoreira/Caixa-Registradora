@@ -1,9 +1,8 @@
-package model.acoes;
+package acoes;
 
+import estrutura.ControlKey;
 import gui.ViewController;
 import javafx.scene.control.TextField;
-import model.ControlKey;
-import model.interfaces.Acao;
 
 public class LimpaVisorAcao implements Acao {
 	
@@ -17,5 +16,4 @@ public class LimpaVisorAcao implements Acao {
 	public void executa() {
 		visor.setText(ControlKey.TEXTO_VAZIO.getString());
 	}
-	
 }

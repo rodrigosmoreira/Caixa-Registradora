@@ -4,31 +4,28 @@ import java.net.URL;
 import java.util.Locale;
 import java.util.ResourceBundle;
 
+import entidades.Venda;
+import estrutura.Reflexao;
+import estrutura.RelacionaEventoXAcao;
 import gui.utils.Mascara;
 import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.AnchorPane;
-import model.RelacionaBotaoAoEvento;
-import model.entidades.Venda;
-import model.reflexao.Reflexao;
 
 public class ViewController implements Initializable {
 
 	@FXML
-	private AnchorPane anchorPane;
-	@FXML
 	private TextField visor;
 	private Venda venda = new Venda();
-	private Button botao;
+	private String acao;
 	
 	@FXML
-	public void onClick(Event event) {
+	public void onClick(Event evento) {
 		Locale.setDefault(Locale.US);
-		botao = new RelacionaBotaoAoEvento(this, event).getBotao();
-		new Reflexao(this).invocaAcao();
+		acao = new RelacionaEventoXAcao(evento).getAcao();
+		if(!acao.isBlank())
+			new Reflexao(this).invocaAcao();
 	}
 	
 	public void initialize(URL url, ResourceBundle sb) {
@@ -43,15 +40,7 @@ public class ViewController implements Initializable {
 		return venda;
 	}
 
-	public AnchorPane getAnchorPane() {
-		return anchorPane;
-	}
-
-	public Button getBotao() {
-		return botao;
-	}
-
-	public void setBotao(Button botao) {
-		this.botao = botao;
+	public String getAcao() {
+		return acao;
 	}
 }

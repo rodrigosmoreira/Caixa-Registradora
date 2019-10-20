@@ -1,12 +1,6 @@
-package model.entidades;
+package entidades;
 
-import java.io.BufferedWriter;
-import java.io.FileWriter;
-import java.io.IOException;
-
-import gui.utils.Alerts;
-import javafx.scene.control.Alert.AlertType;
-import model.ControlKey;
+import estrutura.ControlKey;
 
 public class Venda {
 
@@ -32,18 +26,6 @@ public class Venda {
 		peso = null;
 		valorUnitario = null;
 		preco = null;
-	}
-
-	public void salva() {
-		BufferedWriter buffWrite;
-		try {
-			buffWrite = new BufferedWriter(new FileWriter(ControlKey.FILE_DATABASE.getString(), true));
-			buffWrite.append(String.format(ControlKey.MSG_VENDA_ARQUIVO.getString(), peso, valorUnitario, preco));
-			buffWrite.close();
-		} catch (IOException e) {
-			Alerts.showAlert(ControlKey.ERRO.getString(), ControlKey.TEXTO_VAZIO.getString(), ControlKey.MSG_NAO_SALVOU_VENDA.getString(), AlertType.ERROR);
-			e.printStackTrace();
-		}
 	}
 
 	public Double getPeso() {

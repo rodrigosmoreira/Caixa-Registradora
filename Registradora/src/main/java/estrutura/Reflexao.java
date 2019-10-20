@@ -1,4 +1,4 @@
-package model.reflexao;
+package estrutura;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
@@ -7,36 +7,39 @@ import java.lang.reflect.Method;
 import gui.ViewController;
 import gui.utils.Alerts;
 import javafx.scene.control.Alert.AlertType;
-import javafx.scene.control.Button;
-import model.ControlKey;
 
 public class Reflexao {
 
-	private Button botao;
 	private ViewController _viewController;
+	private String acao;
 
 	public Reflexao(ViewController viewController) {
 		this._viewController = viewController;
-		this.botao = viewController.getBotao();
+		this.acao = viewController.getAcao();
 	}
 
 	public void invocaAcao() {
 		Class<?> classe;
 		try {
-			classe = Class.forName(ControlKey.PATH_ACAO.getString() + getAcaoBotao());
+			classe = Class.forName(ControlKey.PATH_ACAO.getString() + getAcao());
 			Constructor<?> construtor = classe.getDeclaredConstructor(ViewController.class);
 			Object acao = construtor.newInstance(_viewController);
 			Method executa = classe.getDeclaredMethod(ControlKey.EXECUTA.getString());
 			executa.invoke(acao);
 		} catch (ClassNotFoundException | NoSuchMethodException | IllegalAccessException | IllegalArgumentException
 				| InvocationTargetException | SecurityException | InstantiationException exception) {
-			Alerts.showAlert(ControlKey.ERRO.getString(), ControlKey.TEXTO_VAZIO.getString(),
-					ControlKey.ERRO_AO_CLICAR_NO_BOTAO.getString(), AlertType.ERROR);
+			mostraErroExecutaAcao();
+			exception.printStackTrace();
 		}
 	}
 
-	public String getAcaoBotao() {
-		return botao.getId().contains("CaractereAcao") ? "CaractereAcao" : botao.getId();
+	private void mostraErroExecutaAcao() {
+		Alerts.showAlert(ControlKey.ERRO.getString(), ControlKey.TEXTO_VAZIO.getString(),
+				ControlKey.ERRO_EXECUTA_ACAO.getString(), AlertType.ERROR);
+	}
+
+	public String getAcao() {
+		return acao.contains("CaractereAcao") ? "CaractereAcao" : acao;
 	}
 
 }

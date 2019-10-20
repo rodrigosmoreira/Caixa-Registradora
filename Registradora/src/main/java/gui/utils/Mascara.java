@@ -1,7 +1,7 @@
 package gui.utils;
 
+import estrutura.ControlKey;
 import javafx.scene.control.TextField;
-import model.ControlKey;
 
 public class Mascara {
 
