@@ -3,7 +3,7 @@
 ---
 
 <h1 align="center">
-    <img src="https://i.imgur.com/yE4G9XQ.png">
+    <img src="https://i.imgur.com/pweqmwH.png">
 </h1>
 <p align="center">
 <b>Caixa registradora para ajudar a vendinha do Manoel</b>
@@ -34,39 +34,46 @@ No Eclipse
 
 ## Funcionalidades
 - [Calcular Venda](#calcular-venda)
-- [Cancelar Venda](#cancelar-venda)
-- [Limpar Visor](#limpar-visor)
 - [Gerar Registro de Vendas](#gerar-registro-de-vendas)
+- [Manual](#manual)
 
 ### Calcular Venda
-Primeiro informe o peso do produto atravês do teclado ou dos botões e clique no botão Registrar ou a tecla Enter e depois repita o passo para o valor unitário do produto depois disso ira aparecer na tela o valor a ser pago.
+O valor a ser pago é calculado atravês da multiplicação do peso e do valor unitario informado pelo usuario.
 * Observação: O programa aceita somente numeros com precisão de duas casas decimais
 <h1 align="center">
-    <img src="https://i.imgur.com/yLCSKoV.png">
+    <img src="https://i.imgur.com/GzXa4Iq.png">
 </h1>
-
-### Cancelar Venda
-Durante o registro de venda e possivel cancelar a venda apertando o botão Cancelar ou a tecla Delete depois isso ira aparecer a confirmação na tela.
-<h1 align="center">
-    <img src="https://i.imgur.com/HvYX5t3.png">
-</h1>
-
-### Limpar Visor
-Para limpar a tela aperte o botão Limpar ou a tecla BackSpace.
 
 ### Gerar Registro de Vendas
-Para gerar o registro com todas as vendas e o total delas aperte o botão = ou a tecla = e depois disso será exibido na tela o registro e tambêm será salvo no arquivo "registros.txt" no projeto.
+Exibe todas as vendas realizadas no programa desde seu uso inicial na tela e em um arquivo.
 
 <h1 align="center">
-    <img src="https://i.imgur.com/ZussUgl.png">
+    <img src="https://i.imgur.com/gViiEpq.png">
 </h1>
 <p align="center">
 <b>Registro de vendas na tela</b>
 </p>
 
 <h1 align="center">
-    <img src="https://i.imgur.com/CzvfKVs.png">
+    <img src="https://i.imgur.com/tFuwkPF.png">
 </h1>
 <p align="center">
 <b>Registro de vendas no arquivo .txt</b>
+</p>
+
+### Manual
+Descreve a utilização do programa para o usuario.
+
+<h1 align="center">
+    <img src="https://i.imgur.com/SEYZVmM.png">
+</h1>
+<p align="center">
+<b>Caminho do manual</b>
+</p>
+
+<h1 align="center">
+    <img src="https://i.imgur.com/lFNINQm.png">
+</h1>
+<p align="center">
+<b>Manual</b>
 </p>
