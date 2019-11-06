@@ -9,52 +9,38 @@ import java.util.ArrayList;
 import java.util.List;
 
 import entidades.Venda;
-import estrutura.ControlKey;
-import gui.utils.Alerts;
-import javafx.scene.control.Alert.AlertType;
+import estrutura.enums.PATH;
+import estrutura.enums.TEXTO;
+import exceptions.NenhumaVendaRegistradaException;
 
 public class VendaDaoFile implements VendaDao {
+	
+	private String path;
 
-	@Override
-	public void salvaVenda(Venda venda) {
-		BufferedWriter buffWrite;
-		try {
-			buffWrite = new BufferedWriter(new FileWriter(ControlKey.FILE_DATABASE.getString(), true));
-			buffWrite.append(String.format(ControlKey.MSG_VENDA_ARQUIVO.getString(), venda.getPeso(), venda.getValorUnitario(), venda.getPreco()));
-			buffWrite.close();
-		} catch (IOException e) {
-			mostraErroNaoSalvouVenda();
-			e.printStackTrace();
-		}
-	}
-
-	private void mostraErroNaoSalvouVenda() {
-		Alerts.showAlert(ControlKey.ERRO.getString(), ControlKey.TEXTO_VAZIO.getString(), ControlKey.MSG_NAO_SALVOU_VENDA.getString(), AlertType.ERROR);
+	public VendaDaoFile() {
+		this.path = PATH.FILE_DATABASE.getPath();
 	}
 
 	@Override
-	public List<Venda> recuperaVendas() {
-		try {
-			BufferedReader buffRead = new BufferedReader(new FileReader(ControlKey.FILE_DATABASE.getString()));
-			List<Venda> registros = new ArrayList<Venda>();
-			String linha = ControlKey.TEXTO_VAZIO.getString();
-			do {
-				linha = buffRead.readLine();
-				if (linha != null)
-					registros.add(new Venda(linha));
-			} while (linha != null);
-			buffRead.close();
-			return registros;
-		}
-		catch(IOException e) {
-			mostraErroRecuperacaVendas();
-			e.printStackTrace();
-		}
-		return null;
+	public void salvaVenda(Venda venda) throws IOException {
+		BufferedWriter buffWrite = new BufferedWriter(new FileWriter(path, true));
+		buffWrite.append(String.format(TEXTO.FORMATO_VENDA_ARQUIVO.getTexto()
+						, venda.getPeso(), venda.getValorUnitario(), venda.getPreco()));
+		buffWrite.close();
 	}
 
-	private void mostraErroRecuperacaVendas() {
-		Alerts.showAlert(ControlKey.ERRO.getString(), ControlKey.TEXTO_VAZIO.getString(), ControlKey.ERRO_RECUPERACA_VENDAS.getString(), AlertType.ERROR);
+	@Override
+	public List<Venda> recuperaVendas() throws IOException {
+		List<Venda> retorno = new ArrayList<Venda>();
+		BufferedReader buffRead = new BufferedReader(new FileReader(path));
+		String linha = buffRead.readLine();
+		while(linha != null) {
+			retorno.add(new Venda(linha));
+			linha = buffRead.readLine();
+		}
+		buffRead.close();
+		if(retorno.isEmpty()) throw new NenhumaVendaRegistradaException();
+		return retorno;
 	}
 
 }

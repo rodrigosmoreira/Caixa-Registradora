@@ -17,19 +17,11 @@
 	-fx-background-color:#100A13;
 }
 
-.botaoCaractereLargo:hover {
-    -fx-background-color: #bdbdbd;
-}
-
 .botaoCaractereCurto {
 	-fx-font-weight: bold;
 	-fx-background-radius: 0;
 	-fx-text-fill: white;
 	-fx-background-color:#100A13;
-}
-
-.botaoCaractereCurto:hover {
-    -fx-background-color: #bdbdbd;
 }
 
 .botaoAcao {
@@ -38,9 +30,4 @@
 	-fx-background-radius: 0;
 	-fx-background-color: #4A5604;
 }
-
-.botaoAcao:hover {
-    -fx-background-color: #4caf50;
-}
-
 

@@ -2,20 +2,17 @@ package acoes;
 
 import dao.DaoFactory;
 import entidades.Venda;
-import estrutura.ControlKey;
+import estrutura.enums.TEXTO;
 import gui.ViewController;
-import gui.utils.Alerts;
-import javafx.scene.control.Alert.AlertType;
-import javafx.scene.control.TextField;
 
 public class ConfirmaAcao implements Acao {
 
-	private TextField visor;
 	private Venda venda;
+	private ViewController _viewController;
 
 	public ConfirmaAcao(ViewController viewController) {
-		this.visor = viewController.getVisor();
 		this.venda = viewController.getVenda();
+		_viewController = viewController;
 	}
 
 	@Override
@@ -28,44 +25,27 @@ public class ConfirmaAcao implements Acao {
 
 	private void registraPeso() {
 		try {
-			venda.setPeso(visor.getText());
-			alteraVisorParaInformePeso();
+			venda.setPeso(_viewController.getEntrada());
+			_viewController.informeValorUnitario();
 		} catch (Exception e) {
-			avisoInformePeso();
+			_viewController.displayWarningMessage(TEXTO.INFORME_PESO);
 		}
-	}
-
-	private void avisoInformePeso() {
-		Alerts.showAlert(ControlKey.AVISO.getString(), ControlKey.TEXTO_VAZIO.getString(),
-				ControlKey.INFORME_PESO.getString(), AlertType.WARNING);
-	}
-
-	private void alteraVisorParaInformePeso() {
-		visor.setText(ControlKey.TEXTO_VAZIO.getString());
-		visor.setPromptText(ControlKey.INFORME_VALOR_UNITARIO.getString());
 	}
 
 	private void registraValorUnitario() {
 		try {
-			venda.setValorUnitario(visor.getText());
+			venda.setValorUnitario(_viewController.getEntrada());
 			venda.calculaPreco();
 			DaoFactory.getInstanceVendaDao().salvaVenda(venda);
-			alteraVisorParaInformeValorUnitario();
+			_viewController.informePeso();
+			_viewController.displayInformationMessage(mensagemValorASerPago(), TEXTO.VAZIO);
 			venda.anula();
 		} catch (Exception e) {
-			avisoInformeValorUnitario();
+			_viewController.displayWarningMessage(TEXTO.INFORME_VALOR_UNITARIO);
 		}
 	}
 
-	private void avisoInformeValorUnitario() {
-		Alerts.showAlert(ControlKey.AVISO.getString(), ControlKey.TEXTO_VAZIO.getString(),
-				ControlKey.INFORME_VALOR_UNITARIO.getString(), AlertType.WARNING);
-	}
-
-	private void alteraVisorParaInformeValorUnitario() {
-		visor.setText(ControlKey.TEXTO_VAZIO.getString());
-		visor.setPromptText(ControlKey.INFORME_PESO.getString());
-		Alerts.showAlert(ControlKey.RESULTADO.getString(), ControlKey.TEXTO_VAZIO.getString(),
-				String.format(ControlKey.VALOR_A_SER_PAGO.getString(), venda.getPreco()), AlertType.INFORMATION);
+	private String mensagemValorASerPago() {
+		return String.format(TEXTO.VALOR_A_SER_PAGO.getTexto(), venda.getPreco());
 	}
 }

@@ -1,17 +1,19 @@
 package acoes;
 
+import estrutura.enums.TEXTO;
 import gui.ViewController;
-import gui.utils.Alerts;
-import javafx.scene.control.Alert.AlertType;
 
 public class AbreManualAcao implements Acao{
 	
+	private ViewController _viewController;
+
 	public AbreManualAcao(ViewController viewController) {
+		_viewController = viewController;
 	}
 
 	@Override
 	public void executa() {
-		Alerts.showAlert("Manual", "Descricao das funcionalidades", textoManual(), AlertType.INFORMATION);
+		_viewController.displayInformationMessage(textoManual(), TEXTO.TITULO_MANUAL);
 	}
 
 	private String textoManual() {
@@ -26,7 +28,7 @@ public class AbreManualAcao implements Acao{
 		sb.append("\n° Cancelar a venda atual\n");
 		sb.append("\t- Aperte o botao vermelho ou a tecla DELETE\n");
 		sb.append("\n° Confirmar a acao atual da venda\n");
-		sb.append("\t- Aperte o botao verde ou a tecla ENTER\n");
+		sb.append("\t- Aperte o botao verde ou a tecla INSERT\n");
 		return sb.toString();
 	}
 }

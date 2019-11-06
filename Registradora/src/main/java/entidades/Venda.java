@@ -1,6 +1,6 @@
 package entidades;
 
-import estrutura.ControlKey;
+import estrutura.enums.TEXTO;
 
 public class Venda {
 
@@ -66,7 +66,7 @@ public class Venda {
 
 	@Override
 	public String toString() {
-		return String.format(ControlKey.TO_STRING_VENDA.getString(), peso, valorUnitario, preco);
+		return String.format(TEXTO.TO_STRING_VENDA.getTexto(), peso, valorUnitario, preco);
 	}
 
 }

@@ -2,11 +2,12 @@ package estrutura;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
 
+import acoes.Acao;
+import estrutura.enums.ACAO;
+import estrutura.enums.PATH;
+import estrutura.enums.TEXTO;
 import gui.ViewController;
-import gui.utils.Alerts;
-import javafx.scene.control.Alert.AlertType;
 
 public class Reflexao {
 
@@ -19,27 +20,24 @@ public class Reflexao {
 	}
 
 	public void invocaAcao() {
-		Class<?> classe;
-		try {
-			classe = Class.forName(ControlKey.PATH_ACAO.getString() + getAcao());
-			Constructor<?> construtor = classe.getDeclaredConstructor(ViewController.class);
-			Object acao = construtor.newInstance(_viewController);
-			Method executa = classe.getDeclaredMethod(ControlKey.EXECUTA.getString());
-			executa.invoke(acao);
-		} catch (ClassNotFoundException | NoSuchMethodException | IllegalAccessException | IllegalArgumentException
-				| InvocationTargetException | SecurityException | InstantiationException exception) {
-			mostraErroExecutaAcao();
-			exception.printStackTrace();
+		if(!ACAO.VAZIA.getAcao().equals(acao)) {
+			Class<?> classe;
+			try {
+				classe = Class.forName(PATH.ACAO.getPath() + getAcao());
+				Constructor<?> construtor = classe.getDeclaredConstructor(ViewController.class);
+				Acao acao = (Acao) construtor.newInstance(_viewController);
+				acao.executa();
+				
+			} catch (ClassNotFoundException | NoSuchMethodException | IllegalAccessException | IllegalArgumentException
+					| InvocationTargetException | SecurityException | InstantiationException exception) {
+				_viewController.displayErrorMessage(TEXTO.ERRO_INVOCA_ACAO);
+				exception.printStackTrace();
+			}
 		}
 	}
 
-	private void mostraErroExecutaAcao() {
-		Alerts.showAlert(ControlKey.ERRO.getString(), ControlKey.TEXTO_VAZIO.getString(),
-				ControlKey.ERRO_EXECUTA_ACAO.getString(), AlertType.ERROR);
-	}
-
 	public String getAcao() {
-		return acao.contains("CaractereAcao") ? "CaractereAcao" : acao;
+		return acao.contains(ACAO.CARACTERE_ACAO.getAcao()) ? ACAO.CARACTERE_ACAO.getAcao() : acao;
 	}
 
 }

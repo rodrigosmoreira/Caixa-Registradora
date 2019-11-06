@@ -1,21 +1,22 @@
 package acoes;
 
+import estrutura.enums.ACAO;
 import gui.ViewController;
-import javafx.scene.control.TextField;
 
 public class CaractereAcao implements Acao {
 	
-	private TextField visor;
 	private String caractere;
+	private ViewController _viewController;
 
 	public CaractereAcao(ViewController viewController) {
-		this.caractere = viewController.getAcao().replace("CaractereAcao", "");
-		this.visor = viewController.getVisor();
+		this.caractere = viewController.getAcao().replace(ACAO.CARACTERE_ACAO.getAcao()
+														, ACAO.VAZIA.getAcao());
+		_viewController = viewController;
 	}
 
 	@Override
 	public void executa() {
-		visor.appendText(caractere);
+		_viewController.acrescentaCaractereOnVisor(caractere);
 	}
 	
 	
